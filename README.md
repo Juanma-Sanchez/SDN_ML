@@ -25,7 +25,7 @@ The project design is modular, so the SDN Controller is nearly independent from 
 
 This module consits of the network devices connected to the SDN controller. There is no other hard restriction, the topology may change (save for certain points) and it doesn't matter if it's a physical or a virtual network.
 
-The default netowrk for this project will make use of [mininet|http://mininet.org/] for virtualization. The [software|http://mininet.org/download/] and python library are required for our scenario. The latter can be installed with:
+The default netowrk for this project will make use of [mininet](http://mininet.org/) for virtualization. The [software](http://mininet.org/download/) and python library are required for our scenario. The latter can be installed with:
 ```
 pip install -r requirements_dev.txt
 ```
@@ -92,8 +92,9 @@ In this stage the network traces previously generated or provided are retrieved,
 
 The default trainer will also classify the network traces between normal and abnormal if they weren't already by adding the following line to the yaml file:
 ```
+normal: true
 data:
-  normal: true
+  [...]
 ```
 
 This step can potentially be troublesome since it may force the AI to mimic the implemented algorithm, by default checking if some of the received traffic differs from the average by more than relative margin.
@@ -104,7 +105,7 @@ For the training set, the average and standard deviation of the bitrate per link
 
 TODO include representation of a list of 10 average-deviation tuples.
 
-The model will be generated with keras using tensorflow as backend. It will use a [basic classification of images keras example as template|https://www.tensorflow.org/tutorials/keras/basic_classification]. So the output will be the probability that the vector belongs to the groups _normal_ or _abnormal_.
+The model will be generated with keras using tensorflow as backend. It will use a [basic classification of images keras example as template](https://www.tensorflow.org/tutorials/keras/basic_classification). So the output will be the probability that the vector belongs to the groups _normal_ or _abnormal_.
 
 This stage triggers automatically after the collector is finished and can also be started manually by executing:
 ```
