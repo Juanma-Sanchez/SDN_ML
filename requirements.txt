@@ -2,3 +2,5 @@ requests
 tensorflow
 keras
 pyyaml
+numpy
+click

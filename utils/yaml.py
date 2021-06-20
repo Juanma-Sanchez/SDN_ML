@@ -1,7 +1,9 @@
-import pyyaml
+import yaml
 
 def load(filename: str) -> dict:
-    pass
+    with open(filename, 'r') as f:
+        return yaml.load(f)
 
 def dump(dictionary: dict, filename: str):
-    pass
+    with open(filename, 'w') as f:
+        yaml.dump(dictionary, f)

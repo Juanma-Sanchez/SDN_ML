@@ -63,16 +63,13 @@ As previously indicated, this submodule collects traffic information from the SD
 The default collector obtains information from an ONOS controller and saves it in yaml files with the following structure:
 ```
 data:
-  switch:
-    port:
-      received: 
-        - bytes received during 10 seconds
-        - [...]
-      sent: 
-        - bytes sent during 10 seconds
-        - [...]
+  - switch:
+      port:
+        received: bytes received during 10 seconds
+        sent: bytes sent during 10 seconds
+      [...]
     [...]
-  [...]
+  - [...]
 ```
 
 The number of traces to be stored and how many samples will be included per trace can be modified in the settings (make sure the last value matches with the one configured for the analyzer).
